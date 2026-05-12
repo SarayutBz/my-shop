@@ -24,14 +24,10 @@
       {
         "name": "next"
       }
-<<<<<<< HEAD
-    ]
-=======
     ],
     "paths": {
       "@/*": ["./src/*"]
     }
->>>>>>> feature/auth
   },
 
   "include": [
