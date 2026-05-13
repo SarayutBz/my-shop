@@ -4,6 +4,7 @@ import { Product } from "@/types";
 import { useCartStore } from "@/store/cartStore";
 
 export default function ProductCard({ product }: { product: Product }) {
+  console.log(product)
   const addItem = useCartStore((s) => s.addItem);
 
   return (
@@ -22,6 +23,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <span className="font-bold text-lg">
             ฿{product.price.toLocaleString()}
           </span>
+         
           <button
             onClick={() =>
               addItem({
@@ -35,9 +37,14 @@ export default function ProductCard({ product }: { product: Product }) {
             disabled={product.stock === 0}
             className="bg-black text-white text-sm px-4 py-2 rounded-lg hover:bg-gray-800 transition disabled:opacity-40"
           >
+            
             {product.stock === 0 ? "หมด" : "เพิ่มลงตะกร้า"}
           </button>
+          
         </div>
+         <span className="font-bold text-sm">
+          Stock : {product.stock}
+          </span>
       </div>
     </div>
   );
