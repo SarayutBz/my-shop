@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import Stripe from "stripe";
 
 // ต้อง export config นี้ เพื่อให้ Next.js ไม่ parse body อัตโนมัติ
-export const config = { api: { bodyParser: false } };
+// export const config = { api: { bodyParser: false } };
 
 export async function POST(req: Request) {
   const body = await req.text();
